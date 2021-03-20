@@ -1,0 +1,129 @@
+body {
+    background-image: linear-gradient(
+            rgba(143, 143, 143, 0.404),
+            rgba(0, 0, 0, 0.678)
+        ),
+        url(./imgs/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    user-select: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#image-slider-container {
+    min-width: fit-content;
+    margin-top: 0em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#images-slider {
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#current-image,
+#previous-image,
+#next-image {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.075);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 2em 5em;
+}
+#current-image {
+    min-width: 33em;
+    min-height: 33em;
+}
+
+#next-image,
+#previous-image {
+    cursor: pointer;
+    width: 20em;
+    height: 20em;
+    opacity: 0.8;
+    transition: transform 0.5s ease-out;
+}
+#previous-image {
+    margin-left: auto;
+    transform: translateY(9em);
+}
+
+#next-image {
+    margin-right: auto;
+    transform: translateY(9em);
+}
+#next-image:hover {
+    opacity: 1;
+    transform: translateY(8em) scale(1.05);
+}
+#previous-image:hover {
+    opacity: 1;
+    transform: translateY(8em) scale(1.05);
+}
+#images-browser {
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    min-width: 80%;
+    max-width: 90%;
+    min-height: 6em;
+    background-color: rgba(240, 248, 255, 0.11);
+    overflow-y: hidden;
+}
+
+#images-browser::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0);
+    height: 0.6em;
+}
+
+#images-browser::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.253);
+    border-radius: 3px;
+}
+#images-browser::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(240, 248, 255, 0.753);
+}
+
+.browser-image {
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: auto;
+    min-width: 4em;
+    min-height: 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.5s cubic-bezier(0, 0, 0.1, 1.65);
+}
+.browser-image:hover {
+    transform: scale(1.15);
+}
+.active {
+    transform: scale(1.25);
+    border: 0.1em solid aliceblue;
+}
+.active:hover {
+    transform: scale(1.25);
+}
+@media screen and (max-width: 450px) {
+    #next-image,
+    #previous-image {
+        opacity: 0.5;
+        transform: translateY(9em);
+    }
+
+    #next-image:hover,
+    #previous-image:hover {
+        opacity: 0.5;
+        transform: translateY(9em);
+    }
+}
