@@ -96,5 +96,5 @@ function nextTimeout(func) {
     while (id--) {
         window.clearTimeout(id);
     }
-    setTimeout(func, 500000);
+    setTimeout(func, 5000);
 }
